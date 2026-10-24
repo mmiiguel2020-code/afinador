@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afinador"
+version = "1.0.0"
+description = "Afina samples WAV a la nota exacta mas cercana (A4 = 440 Hz) remuestreando el audio"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Miguel" }]
+keywords = ["audio", "tuning", "pitch", "samples", "soundfont", "acordeon"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "soundfile",
+    "librosa",
+]
+
+[project.scripts]
+afinador = "afinador.__main__:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
